@@ -1,2 +1,0 @@
-# KoalaOS
-Website for KoalaOS
