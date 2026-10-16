@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KoalaOS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <header class="actionbar">
+        <div class="logo">
+            <span class="icon"></span>
+            <span class="title">KoalaOS</span>
+        </div>
+
+        <nav class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="pricelist.html">Preisliste</a>
+            <a href="rules.html">Regeln</a>
+            <a href="https://discord.gg/XpzhPEUMTs" target="_blank" class="discord_btn">Discord</a>
+
+            <div class="theme-picker-container">
+                <i class="fas fa-palette" id="themeIcon"></i>
+            
+                <div id="themeMenu" class="theme-menu">
+                    <h4>Akzente</h4>
+                    <div class="color-options">
+                        <span class="color-btn" style="background-color: #ffffff;" onclick="setTheme('white')" title="Weiß"></span>
+                        <span class="color-btn" style="background-color: #58a6ff;" onclick="setTheme('blue')" title="Blau"></span>
+                        <span class="color-btn" style="background-color: #51cf66;" onclick="setTheme('green')" title="Grün"></span>
+                        <span class="color-btn" style="background-color: #fcc419;" onclick="setTheme('gold')" title="Gold"></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+        <section class="hero-section">
+            <h1>Willkommen bei KoalaOS!</h1>
+            <p>Du suchst nach gezielten Items für dein Bauprojekt, oder möchtest einfach mal stöbern? Dann bist du hier genau richtig!</p>
+        </section>
+
+        <section class="offers-section">
+            <h2>Aktuelle Top-Angebote:</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <span class="badge sale">Sale -25%</span>
+                    <h3>Stein</h3>
+                    <p class="price"><span class="old-price">100 Coins</span> 75 Coins</p>
+                </div>
+
+                <div class="offer-card">
+                    <span class="badge sale">Sale -25%</span>
+                    <h3>Bruchstein</h3>
+                    <p class="price"><span class="old-price">100 Coins</span> 75 Coins</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</head>
+<body>
+
+    <script src="script.js"></script>
+</body>
+<footer class="site-footer">
+    <p>&copy; 2026 KoalaOS. Ein inoffizielles Ingame-Projekt auf dem CityBuild von <a href="https://">FantasyMC.de</a>.</p>
+    <p class="disclaimer">
+        Diese Website steht in keinerlei Verbindung zu Mojang AB oder dem offiziellen Server-Team von fantasymc.de.
+    </p>
+</footer>
+</html>

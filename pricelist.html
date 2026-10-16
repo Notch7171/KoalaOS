@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KoalaOS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <header class="actionbar">
+        <div class="logo">
+            <span class="icon"></span>
+            <span class="title">KoalaOS</span>
+        </div>
+
+        <nav class="nav-left">
+            
+            <a href="index.html">Home</a>
+            <a href="pricelist.html">Preisliste</a>
+            <a href="rules.html">Regeln</a>
+            <a href="https://discord.gg/XpzhPEUMTs" target="_blank" class="discord_btn">Discord</a>
+
+            <div class="theme-picker-container">
+                <i class="fas fa-palette" id="themeIcon"></i>
+            
+                <div id="themeMenu" class="theme-menu">
+                    <h4>Akzente</h4>
+                    <div class="color-options">
+                        <span class="color-btn" style="background-color: #ffffff;" onclick="setTheme('white')" title="Weiß"></span>
+                        <span class="color-btn" style="background-color: #58a6ff;" onclick="setTheme('blue')" title="Blau"></span>
+                        <span class="color-btn" style="background-color: #51cf66;" onclick="setTheme('green')" title="Grün"></span>
+                        <span class="color-btn" style="background-color: #fcc419;" onclick="setTheme('gold')" title="Gold"></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+</head>
+<body>
+    <div class="shop-wrapper">
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Nach Items suchen..." onkeyup="filterTable ()">
+        </div>
+        
+        <div class="table-container">
+            <table id="pricelist">
+                <thead>
+                    <tr><th>Kategorie</th><th>Item</th><th class="right">Preis</th><th class="right">Menge</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Holz</td><td>Eichenstamm</td><td class="right">150.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Fichtenstamm</td><td class="right">100.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Birkenstamm</td><td class="right">150.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Tropenholzstamm</td><td class="right">100.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Akazienstamm</td><td class="right">150.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Schwarzeichenstamm</td><td class="right">100.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Mangrovenstamm</td><td class="right">250.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Pappelstamm</td><td class="right">/</td><td class="right">/</td></tr>
+                    <tr><td>Holz</td><td>Kirschstamm</td><td class="right">150.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Blasseichenstamm</td><td class="right">100.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Karmesinstiel</td><td class="right">150.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Wirrstamm</td><td class="right">150.00</td><td class="right">64</td></tr>
+
+                    <tr><td>Holz</td><td>Abegzogener Eichenstamm</td><td class="right">200.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Abgezogener Fichtenstamm</td><td class="right">150.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Abgezogener Birkenstamm</td><td class="right">200.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Abgezogener Tropenholzstamm</td><td class="right">150.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Abgezogener Akazienstamm</td><td class="right">200.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Abgezogener Schwarzeichenstamm</td><td class="right">150.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Abgezogener Mangrovenstamm</td><td class="right">300.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Entrindeter Pappelstamm</td><td class="right">/</td><td class="right">/</td></tr>
+                    <tr><td>Holz</td><td>Entrindeter Kirschstamm</td><td class="right">200.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Abgezogener Blasseichenstamm</td><td class="right">150.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Geschälter Karmesinstiel</td><td class="right">200.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Geschälter Wirrstamm</td><td class="right">200.00</td><td class="right">64</td></tr>
+
+                    <tr><td>Holz</td><td>Eichenholz</td><td class="right">200.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Fichtenholz</td><td class="right">133.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Birkenholz</td><td class="right">200.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Tropenholz</td><td class="right">133.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Akazienholz</td><td class="right">200.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Schwarzeichenholz</td><td class="right">133.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Mangrovenholz</td><td class="right">333.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Pappelholz</td><td class="right">/</td><td class="right">/</td></tr>
+                    <tr><td>Holz</td><td>Kirschholz</td><td class="right">200.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Blasseichenholz</td><td class="right">133.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Karmesinhyphen</td><td class="right">200.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Wirrhyphe</td><td class="right">200.00</td><td class="right">64</td></tr>
+
+                    <tr><td>Holz</td><td>Abgezogenes Eichenholz</td><td class="right">237.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Abgezogenes Fichtenholz</td><td class="right">175.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Abgezogenes Birkenholz</td><td class="right">237.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Abgezogenes Tropenholz</td><td class="right">175.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Abgezogenes Akazienholz</td><td class="right">237.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Abgezogenes Schwarzeichenholz</td><td class="right">175.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Abgezogenes Mangrovenholz</td><td class="right">362.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Entrindetes Pappelholz</td><td class="right">/</td><td class="right">/</td></tr>
+                    <tr><td>Holz</td><td>Abgezogenes Kirschholz</td><td class="right">237.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Abgezogenes Blasseichenholz</td><td class="right">175.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Geschälte Karmesinhyphen</td><td class="right">237.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Geschälter Wirrhyphe</td><td class="right">237.50</td><td class="right">64</td></tr>
+
+                    <tr><td>Holz</td><td>Eichenbretter</td><td class="right">37.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Fichtenbretter</td><td class="right">25.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Birkenbretter</td><td class="right">37.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Tropenholzbretter</td><td class="right">25.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Akazienbretter</td><td class="right">37.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Schwarzeichenbretter</td><td class="right">25.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Mangrovenbretter</td><td class="right">62.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Pappelholzbretter</td><td class="right">/</td><td class="right">/</td></tr>
+                    <tr><td>Holz</td><td>Kirschholz-Bretter</td><td class="right">37.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Blasseichenbretter</td><td class="right">25.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Karmesinbretter</td><td class="right">37.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Wirrbretter</td><td class="right">37.50</td><td class="right">64</td></tr>
+
+                    <tr><td>Holz</td><td>Eichentreppe</td><td class="right">56.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Fichtentreppe</td><td class="right">37.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Birkentreppe</td><td class="right">56.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Tropenholztreppe</td><td class="right">37.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Akazientreppe</td><td class="right">56.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Schwarzeichentreppe</td><td class="right">37.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Mangroventreppe</td><td class="right">93.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Pappeltreppe</td><td class="right">/</td><td class="right">/</td></tr>
+                    <tr><td>Holz</td><td>Kirschholz-treppe</td><td class="right">56.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Blasseichentreppe</td><td class="right">37.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Karmesintreppe</td><td class="right">56.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Wirrtreppe</td><td class="right">56.50</td><td class="right">64</td></tr>
+
+                    <tr><td>Holz</td><td>Eichenstufe</td><td class="right">18.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Fichtenstufe</td><td class="right">12.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Birkenstufe</td><td class="right">18.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Tropenholzstufe</td><td class="right">12.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Akazienstufe</td><td class="right">18.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Schwarzeichenstufe</td><td class="right">12.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Mangrovenstufe</td><td class="right">31.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Pappelstufe</td><td class="right">/</td><td class="right">/</td></tr>
+                    <tr><td>Holz</td><td>Kirschholz-Stufe</td><td class="right">18.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Blasseichenstufe</td><td class="right">12.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Karmesinstufe</td><td class="right">18.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Wirrstufe</td><td class="right">18.50</td><td class="right">64</td></tr>
+
+                    <tr><td>Holz</td><td>Eichenholzzaun</td><td class="right">58.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Fichtenzaun</td><td class="right">41.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Birkenzaun</td><td class="right">58.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Tropenholzzaun</td><td class="right">41.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Akazienzaun</td><td class="right">58.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Schwarzeichenholzzaun</td><td class="right">41.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Mangrovenzaun</td><td class="right">91.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Pappelzaun</td><td class="right">/</td><td class="right">/</td></tr>
+                    <tr><td>Holz</td><td>Kirschholz-Zaun</td><td class="right">58.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Blasseichenholzzaun</td><td class="right">41.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Karmesinzaun</td><td class="right">58.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Wirrzaun</td><td class="right">58.50</td><td class="right">64</td></tr>
+
+                    <tr><td>Holz</td><td>Eichenzauntor</td><td class="right">125.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Fichtenzauntor</td><td class="right">100.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Birkenzauntor</td><td class="right">125.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Troepnholz-Zauntor</td><td class="right">100.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Akazienzauntor</td><td class="right">125.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Schwarzeichenzauntor</td><td class="right">100.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Mangrovenzauntor</td><td class="right">175.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Pappelzauntor</td><td class="right">/</td><td class="right">/</td></tr>
+                    <tr><td>Holz</td><td>Kirschholz-Zauntor</td><td class="right">125.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Blasseichenzauntor</td><td class="right">100.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Karmesinzauntor</td><td class="right">125.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Wirrzauntor</td><td class="right">125.00</td><td class="right">64</td></tr>
+
+                    <tr><td>Holz</td><td>Eichentür</td><td class="right">75.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Fichtentür</td><td class="right">50.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Birkentür</td><td class="right">75.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Tropenholztür</td><td class="right">50.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Akazientür</td><td class="right">75.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Schwarzeichentür</td><td class="right">50.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Mangrovenholztür</td><td class="right">125.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Pappeltür</td><td class="right">/</td><td class="right">/</td></tr>
+                    <tr><td>Holz</td><td>Kirschholztür</td><td class="right">75.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Blasseichentür</td><td class="right">50.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Karmesintür</td><td class="right">75.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Wirrtür</td><td class="right">75.00</td><td class="right">64</td></tr>
+
+                    <tr><td>Holz</td><td>Eichenfalltür</td><td class="right">112.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Fichtenfalltür</td><td class="right">75.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Birkenfalltür</td><td class="right">112.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Tropenholz-Falltür</td><td class="right">75.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Akazienfalltür</td><td class="right">112.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Schwarzeichenfalltür</td><td class="right">75.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Mangrovenfalltür</td><td class="right">187.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Pappelfalltür</td><td class="right">/</td><td class="right">/</td></tr>
+                    <tr><td>Holz</td><td>Kirschholzfalltür</td><td class="right">112.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Blasseichenfalltür</td><td class="right">75.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Karmesinfalltür</td><td class="right">112.50</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Wirrfalltür</td><td class="right">112.50</td><td class="right">64</td></tr>
+
+                    <tr><td>Holz</td><td>Eichenlaub</td><td class="right">50.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Fichtennadeln</td><td class="right">50.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Birkenlaub</td><td class="right">50.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Tropenbaumlaub</td><td class="right">50.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Akazienlaub</td><td class="right">50.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Schwarzeichenlaub</td><td class="right">50.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Mangrovenlaub</td><td class="right">50.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Rote Pappelblätter</td><td class="right">/</td><td class="right">/</td></tr>
+                    <tr><td>Holz</td><td>Orangene Pappelblätter</td><td class="right">/</td><td class="right">/</td></tr>
+                    <tr><td>Holz</td><td>Gelbe Pappelblätter</td><td class="right">/</td><td class="right">/</td></tr>
+                    <tr><td>Holz</td><td>Kirschlaub</td><td class="right">50.00</td><td class="right">64</td></tr>
+                    <tr><td>Holz</td><td>Blasseichenlaub</td><td class="right">50.00</td><td class="right">64</td></tr>
+
+                    <tr><td>Holz</td><td>Eichensetzling</td><td class="right">50.00</td><td class="right">8</td></tr>
+                    <tr><td>Holz</td><td>Fichtensetzling</td><td class="right">50.00</td><td class="right">8</td></tr>
+                    <tr><td>Holz</td><td>Birkensetzling</td><td class="right">50.00</td><td class="right">8</td></tr>
+                    <tr><td>Holz</td><td>Tropenholzsetzling</td><td class="right">50.00</td><td class="right">8</td></tr>
+                    <tr><td>Holz</td><td>Akaziensetzling</td><td class="right">50.00</td><td class="right">8</td></tr>
+                    <tr><td>Holz</td><td>Schwarzeichensetzling</td><td class="right">50.00</td><td class="right">8</td></tr>
+                    <tr><td>Holz</td><td>Mangrovenkeimling</td><td class="right">50.00</td><td class="right">8</td></tr>
+                    <tr><td>Holz</td><td>Pappelsetzling</td><td class="right">50.00</td><td class="right">8</td></tr>
+                    <tr><td>Holz</td><td>Kirschsetzling</td><td class="right">50.00</td><td class="right">8</td></tr>
+                    <tr><td>Holz</td><td>Blasseichensetzling</td><td class="right">50.00</td><td class="right">8</td></tr>
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<footer class="site-footer">
+    <p>&copy; 2026 KoalaOS. Ein inoffizielles Ingame-Projekt auf dem CityBuild von fantasymc.de.</p>
+    <p class="disclaimer">
+        Diese Website steht in keinerlei Verbindung zu Mojang AB oder dem offiziellen Server-Team von fantasymc.de.
+    </p>
+</footer>
+</html>
